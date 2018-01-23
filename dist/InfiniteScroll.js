@@ -110,7 +110,10 @@ var InfiniteScroll = (function(_Component) {
     {
       key: 'componentWillReceiveProps',
       value: function componentWillReceiveProps(nextProps) {
-        if (nextProps.resetPage !== this.props.resetPage) {
+        if (
+          nextProps.resetPage &&
+          nextProps.resetPage !== this.props.resetPage
+        ) {
           this.pageLoaded = nextProps.pageStart;
         }
       },
