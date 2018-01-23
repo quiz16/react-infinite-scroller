@@ -42,6 +42,12 @@ export default class InfiniteScroll extends Component {
     this.attachScrollListener();
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.pageStart !== this.props.pageStart) {
+      this.pageLoaded = nextProps.pageStart;
+    }
+  }
+
   componentDidUpdate() {
     this.attachScrollListener();
   }

@@ -108,6 +108,14 @@ var InfiniteScroll = (function(_Component) {
       },
     },
     {
+      key: 'componentWillReceiveProps',
+      value: function componentWillReceiveProps(nextProps) {
+        if (nextProps.pageStart !== this.props.pageStart) {
+          this.pageLoaded = nextProps.pageStart;
+        }
+      },
+    },
+    {
       key: 'componentDidUpdate',
       value: function componentDidUpdate() {
         this.attachScrollListener();
