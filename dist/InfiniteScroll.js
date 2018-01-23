@@ -282,6 +282,7 @@ var InfiniteScroll = (function(_Component) {
           threshold = _props.threshold,
           useCapture = _props.useCapture,
           useWindow = _props.useWindow,
+          resetPage = _props.resetPage,
           props = _objectWithoutProperties(_props, [
             'children',
             'element',
@@ -295,6 +296,7 @@ var InfiniteScroll = (function(_Component) {
             'threshold',
             'useCapture',
             'useWindow',
+            'resetPage',
           ]);
 
         props.ref = function(node) {
@@ -353,6 +355,7 @@ InfiniteScroll.defaultProps = {
   isReverse: false,
   useCapture: false,
   loader: null,
+  resetPage: false,
 };
 exports.default = InfiniteScroll;
 module.exports = exports['default'];

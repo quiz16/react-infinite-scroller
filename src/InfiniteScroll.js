@@ -30,6 +30,7 @@ export default class InfiniteScroll extends Component {
     isReverse: false,
     useCapture: false,
     loader: null,
+    resetPage: false,
   };
 
   constructor(props) {
@@ -189,6 +190,7 @@ export default class InfiniteScroll extends Component {
       threshold,
       useCapture,
       useWindow,
+      resetPage,
       ...props
     } = this.props;
 
