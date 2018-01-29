@@ -193,6 +193,7 @@ export default class InfiniteScroll extends Component {
       useCapture,
       useWindow,
       resetPage,
+      isLoading,
       ...props
     } = this.props;
 

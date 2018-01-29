@@ -286,6 +286,7 @@ var InfiniteScroll = (function(_Component) {
           useCapture = _props.useCapture,
           useWindow = _props.useWindow,
           resetPage = _props.resetPage,
+          isLoading = _props.isLoading,
           props = _objectWithoutProperties(_props, [
             'children',
             'element',
@@ -300,6 +301,7 @@ var InfiniteScroll = (function(_Component) {
             'useCapture',
             'useWindow',
             'resetPage',
+            'isLoading',
           ]);
 
         props.ref = function(node) {
