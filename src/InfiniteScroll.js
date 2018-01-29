@@ -17,6 +17,7 @@ export default class InfiniteScroll extends Component {
     useCapture: PropTypes.bool,
     useWindow: PropTypes.bool,
     resetPage: PropTypes.bool,
+    isLoading: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -31,6 +32,7 @@ export default class InfiniteScroll extends Component {
     useCapture: false,
     loader: null,
     resetPage: false,
+    isLoading: false,
   };
 
   constructor(props) {
@@ -160,7 +162,7 @@ export default class InfiniteScroll extends Component {
         el.scrollHeight - el.parentNode.scrollTop - el.parentNode.clientHeight;
     }
 
-    if (offset < Number(this.props.threshold)) {
+    if (offset < Number(this.props.threshold) && !this.props.isLoading) {
       this.detachScrollListener();
       // Call loadMore after detachScrollListener to allow for non-async loadMore functions
       if (typeof this.props.loadMore === 'function') {
